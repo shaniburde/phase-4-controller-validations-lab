@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def show
     post = Post.find(params[:id])
     
@@ -9,7 +8,7 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
 
-    post.update(post_params)
+    post.update!(post_params)
 
     render json: post
   end
@@ -19,5 +18,4 @@ class PostsController < ApplicationController
   def post_params
     params.permit(:category, :content, :title)
   end
-
 end
